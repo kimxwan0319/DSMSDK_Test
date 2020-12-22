@@ -23,9 +23,10 @@ class WKViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     
     
     func settingWKView(){
-        let request: URLRequest = URLRequest.init(url: NSURL.init(string: "http://192.168.137.1:3001/external/login?redirect_url=http://localhost:3000&client_id=123456")! as URL, cachePolicy: URLRequest.CachePolicy.useProtocolCachePolicy, timeoutInterval: 10)
+        let request: URLRequest = URLRequest.init(url: NSURL.init(string: "http://10.156.147.110:3000/external/login?redirect_url=https://www.google.com&client_id=qwer")! as URL, cachePolicy: URLRequest.CachePolicy.useProtocolCachePolicy, timeoutInterval: 10)
         wkWebView.load(request)
         
+        wkWebView.addObserver(self, forKeyPath: "URL", options: .new, context: nil)
         self.view?.addSubview(self.wkWebView!)
     }
     
@@ -40,7 +41,12 @@ class WKViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
         wkWebView.reload()
     }
     
-    func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
-        print("1")
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == #keyPath(WKWebView.url) {
+            // Whenever URL changes, it can be accessed via WKWebView instance
+            let url = wkWebView.url
+            print("\(url)")
+        }
     }
+    
 }
