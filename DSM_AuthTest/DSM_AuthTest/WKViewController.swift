@@ -7,23 +7,43 @@
 
 import UIKit
 import WebKit
+import Alamofire
 
-class WKViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
+class WKViewController: UIViewController {
 
-    private var wkWebView: WKWebView!
+    private var _base_URL = ""
     
+    private var _client_id: String = ""
+    private var _client_secret: String = ""
+    private var _redirctURL: String = ""
+    
+    private var wkWebView: WKWebView!
+     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         wkWebView = WKWebView(frame: self.view.frame)
         wkWebView.navigationDelegate = self
         wkWebView.uiDelegate = self
+        
         settingWKView()
     }
     
+    public func initialize(base_URL: String ,client_id: String, client_secret: String, redirctURL: String){
+        _base_URL = base_URL
+        _client_id = client_id
+        _client_secret = client_secret
+        _redirctURL = redirctURL
+    }
     
+    
+}
+
+extension WKViewController : WKUIDelegate, WKNavigationDelegate {
     func settingWKView(){
-        let request: URLRequest = URLRequest.init(url: NSURL.init(string: "http://10.156.147.110:3000/external/login?redirect_url=https://www.google.com&client_id=qwer")! as URL, cachePolicy: URLRequest.CachePolicy.useProtocolCachePolicy, timeoutInterval: 10)
+        let URL = "http://192.168.43.93:3000/external/login?redirect_url="+_redirctURL+"&client_id"+_client_id
+        
+        let request: URLRequest = URLRequest.init(url: NSURL.init(string:URL)! as URL, cachePolicy: URLRequest.CachePolicy.useProtocolCachePolicy, timeoutInterval: 10)
         wkWebView.load(request)
         
         wkWebView.addObserver(self, forKeyPath: "URL", options: .new, context: nil)
@@ -43,10 +63,22 @@ class WKViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == #keyPath(WKWebView.url) {
-            // Whenever URL changes, it can be accessed via WKWebView instance
             let url = wkWebView.url
             print("\(url)")
+            
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
+    func getToken(){
+        let requestBody : [String:String] = [
+            "client_id": _client_id,
+            "client_secret": _client_secret
+        ]
+        
+        AF.request(_base_URL+"/token", method: .post, parameters: requestBody, encoder: JSONParameterEncoder.default).validate().responseJSON(completionHandler:{ res in
+            print(res)
+        })
+    }
 }
+

@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		924C425E258F374D00705A9B /* WKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C425D258F374D00705A9B /* WKViewController.swift */; };
+		92A51B522591CEC200884095 /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A51B512591CEC200884095 /* Classes.swift */; };
 		92A8ED71258F172200658405 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8ED70258F172200658405 /* AppDelegate.swift */; };
 		92A8ED73258F172200658405 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8ED72258F172200658405 /* SceneDelegate.swift */; };
 		92A8ED75258F172200658405 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8ED74258F172200658405 /* ViewController.swift */; };
@@ -15,10 +16,15 @@
 		92A8ED7A258F172300658405 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92A8ED79258F172300658405 /* Assets.xcassets */; };
 		92A8ED7D258F172300658405 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A8ED7B258F172300658405 /* LaunchScreen.storyboard */; };
 		92A8ED8A258F188000658405 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A8ED89258F188000658405 /* WebKit.framework */; };
+		FFDBA7D8FBBA0301C6A3E624 /* Pods_DSM_AuthTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496924EB1ED42B4B089FDB5C /* Pods_DSM_AuthTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EEE6B5FC89CBEE6433A1735 /* Pods-DSM_AuthTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSM_AuthTest.release.xcconfig"; path = "Target Support Files/Pods-DSM_AuthTest/Pods-DSM_AuthTest.release.xcconfig"; sourceTree = "<group>"; };
+		4803BFD2A3C8B17510F29BBA /* Pods-DSM_AuthTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSM_AuthTest.debug.xcconfig"; path = "Target Support Files/Pods-DSM_AuthTest/Pods-DSM_AuthTest.debug.xcconfig"; sourceTree = "<group>"; };
+		496924EB1ED42B4B089FDB5C /* Pods_DSM_AuthTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DSM_AuthTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		924C425D258F374D00705A9B /* WKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKViewController.swift; sourceTree = "<group>"; };
+		92A51B512591CEC200884095 /* Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
 		92A8ED6D258F172200658405 /* DSM_AuthTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSM_AuthTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A8ED70258F172200658405 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92A8ED72258F172200658405 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +42,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92A8ED8A258F188000658405 /* WebKit.framework in Frameworks */,
+				FFDBA7D8FBBA0301C6A3E624 /* Pods_DSM_AuthTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +55,7 @@
 				92A8ED6F258F172200658405 /* DSM_AuthTest */,
 				92A8ED6E258F172200658405 /* Products */,
 				92A8ED88258F188000658405 /* Frameworks */,
+				FCDB0E2867D9CB7485FDC7A6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +74,7 @@
 				92A8ED72258F172200658405 /* SceneDelegate.swift */,
 				92A8ED74258F172200658405 /* ViewController.swift */,
 				924C425D258F374D00705A9B /* WKViewController.swift */,
+				92A51B512591CEC200884095 /* Classes.swift */,
 				92A8ED76258F172200658405 /* Main.storyboard */,
 				92A8ED79258F172300658405 /* Assets.xcassets */,
 				92A8ED7B258F172300658405 /* LaunchScreen.storyboard */,
@@ -78,8 +87,18 @@
 			isa = PBXGroup;
 			children = (
 				92A8ED89258F188000658405 /* WebKit.framework */,
+				496924EB1ED42B4B089FDB5C /* Pods_DSM_AuthTest.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FCDB0E2867D9CB7485FDC7A6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4803BFD2A3C8B17510F29BBA /* Pods-DSM_AuthTest.debug.xcconfig */,
+				0EEE6B5FC89CBEE6433A1735 /* Pods-DSM_AuthTest.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,9 +108,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92A8ED81258F172300658405 /* Build configuration list for PBXNativeTarget "DSM_AuthTest" */;
 			buildPhases = (
+				1D9072A7A55861AE7E9EEF27 /* [CP] Check Pods Manifest.lock */,
 				92A8ED69258F172200658405 /* Sources */,
 				92A8ED6A258F172200658405 /* Frameworks */,
 				92A8ED6B258F172200658405 /* Resources */,
+				DFFE7FBB76420CC415331332 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -147,6 +168,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1D9072A7A55861AE7E9EEF27 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DSM_AuthTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFFE7FBB76420CC415331332 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DSM_AuthTest/Pods-DSM_AuthTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DSM_AuthTest/Pods-DSM_AuthTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DSM_AuthTest/Pods-DSM_AuthTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		92A8ED69258F172200658405 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -155,6 +218,7 @@
 				92A8ED75258F172200658405 /* ViewController.swift in Sources */,
 				92A8ED71258F172200658405 /* AppDelegate.swift in Sources */,
 				924C425E258F374D00705A9B /* WKViewController.swift in Sources */,
+				92A51B522591CEC200884095 /* Classes.swift in Sources */,
 				92A8ED73258F172200658405 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +363,7 @@
 		};
 		92A8ED82258F172300658405 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4803BFD2A3C8B17510F29BBA /* Pods-DSM_AuthTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -318,6 +383,7 @@
 		};
 		92A8ED83258F172300658405 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EEE6B5FC89CBEE6433A1735 /* Pods-DSM_AuthTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

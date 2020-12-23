@@ -15,8 +15,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func moveNext(_ sender: Any) {
-        let VC = WKViewController()
-        present(VC, animated: true)
+        SWHSDK.shared.loginWithSWHAuth(self)
     }
+    
 }
 
