@@ -1,0 +1,6 @@
+framework module Pods_DSM_AuthTest {
+  umbrella header "Pods-DSM_AuthTest-umbrella.h"
+
+  export *
+  module * { export * }
+}
