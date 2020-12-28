@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     }
 
     @IBAction func moveNext(_ sender: Any) {
-        SWHSDK.shared.loginWithSWHAuth(self)
     }
     
 }

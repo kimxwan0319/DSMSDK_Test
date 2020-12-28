@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        SWHSDK.initSDK(client_id: "qwer", client_secret: "123456", redirctURL: "https://www.google.com")
         return true
     }
 
