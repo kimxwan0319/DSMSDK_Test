@@ -11,6 +11,7 @@ import DSMSDK
 class ViewController: UIViewController {
 
     var refreshToken = ""
+    var accessToken = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class ViewController: UIViewController {
             } else {
                 print(token!.Access_Token)
                 print(token!.Refresh_Token)
+                self.accessToken = token!.Access_Token
                 self.refreshToken = token!.Refresh_Token
             }
         }
@@ -40,11 +42,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func getMyInfo(_ sender: Any) {
-        DSMAUTH.me(access_token: refreshToken){ (user, error) in
+        DSMAUTH.me(access_token: accessToken){ (user, error) in
             if let error = error{
                 print(error)
             } else{
-                print(user!)
+                print(user!.name)
+                print(user!.StudentID)
+                print(user!.email)
             }
         }
     }
