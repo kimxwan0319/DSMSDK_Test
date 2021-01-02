@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (5.4.1)
+  - DSMSDK (1.1.0):
+    - Alamofire (~> 5.2)
+
+DEPENDENCIES:
+  - DSMSDK
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - DSMSDK
+
+SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  DSMSDK: 7f7bcd40ca2d09cec348dfee194c6bcea6215f10
+
+PODFILE CHECKSUM: 1b27798e66ed092f24e0b95fa80258689c92f7f1
+
+COCOAPODS: 1.9.3

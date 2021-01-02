@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ETK-7v-caL">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ccA-vp-45F">
+            <objects>
+                <viewController id="ETK-7v-caL" customClass="ViewController" customModule="testSDK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uhM-Ib-C9h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfR-gb-orh">
+                                <rect key="frame" x="53" y="427.5" width="308" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="308" id="0BZ-xk-vLx"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="308" id="XMY-6L-kGK"/>
+                                    <constraint firstAttribute="height" constant="51" id="nEQ-zP-lLf"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="loginBtn"/>
+                                <connections>
+                                    <action selector="loginWithDSMAuth:" destination="ETK-7v-caL" eventType="touchUpInside" id="JOw-0N-veY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWd-Y7-CrH">
+                                <rect key="frame" x="161.5" y="632" width="91" height="30"/>
+                                <state key="normal" title="token refresh"/>
+                                <connections>
+                                    <action selector="tokenRefresh:" destination="ETK-7v-caL" eventType="touchUpInside" id="Xmp-tm-d7N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIt-W4-K6W">
+                                <rect key="frame" x="183.5" y="737" width="47" height="30"/>
+                                <state key="normal" title="myInfo"/>
+                                <connections>
+                                    <action selector="getMyInfo:" destination="ETK-7v-caL" eventType="touchUpInside" id="pDV-hu-JDn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="82X-lj-nOc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dfR-gb-orh" firstAttribute="centerX" secondItem="82X-lj-nOc" secondAttribute="centerX" id="6fB-Q9-8jR"/>
+                            <constraint firstItem="82X-lj-nOc" firstAttribute="bottom" secondItem="PIt-W4-K6W" secondAttribute="bottom" constant="95" id="9bJ-PE-ag0"/>
+                            <constraint firstItem="fWd-Y7-CrH" firstAttribute="centerX" secondItem="82X-lj-nOc" secondAttribute="centerX" id="9og-5U-F9u"/>
+                            <constraint firstItem="PIt-W4-K6W" firstAttribute="centerX" secondItem="82X-lj-nOc" secondAttribute="centerX" id="Igi-tz-aEY"/>
+                            <constraint firstItem="dfR-gb-orh" firstAttribute="centerY" secondItem="82X-lj-nOc" secondAttribute="centerY" id="OZf-im-NxD"/>
+                            <constraint firstItem="82X-lj-nOc" firstAttribute="bottom" secondItem="fWd-Y7-CrH" secondAttribute="bottom" constant="200" id="tk9-oF-0z8"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wtU-uA-IUL" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="72" y="54"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="loginBtn" width="240" height="40"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
